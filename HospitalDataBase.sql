@@ -70,6 +70,18 @@ INSERT INTO Nurses(Oib, Name, Surname, RoomId, OperationRoomId) VALUES
 ('8888888888', 'Zrinka', 'Zrinić', 3, 103),
 ('9999999999', 'Petra', 'Petrić', 4, NULL)
 
+SELECT * FROM Operations ORDER BY OperationTime
+
+SELECT * FROM Surgeons WHERE Address NOT LIKE '%Split'
+
+SELECT * FROM Nurses
+
+UPDATE Nurses SET RoomId = 5 WHERE RoomId = 4
+
+SELECT Oib, Name, Surname FROM Patients WHERE RoomId = 7 ORDER BY Surname
+
+SELECT * FROM Operations WHERE CAST(OperationTime AS DATE) = CAST(GETDATE() AS DATE)
+
 
 
 
