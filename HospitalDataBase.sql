@@ -62,7 +62,8 @@ INSERT INTO Patients(Oib, Name, Surname, Address, RoomId) VALUES
 INSERT INTO Operations(OperationType, PatientOib, SurgeonOib, OperationTime, OperationRoomId) VALUES
 ('Operacija jetre', '3333333333', '2222222222', '2021-3-3 3:40PM', 100),
 ('Operacija mozga', '4444444444', '1111111111', '2021-12-9 12:00', 102),
-('Operacija srca', '5555555555', '0000000000', '2021-12-10 7:00AM', 103)
+('Operacija srca', '5555555555', '0000000000', '2021-12-10 7:00AM', 103),
+('Operacija jetre', '3333333333', '2222222222', '2021-3-3 6:40PM', 101)
 
 INSERT INTO Nurses(Oib, Name, Surname, RoomId, OperationRoomId) VALUES
 ('6666666666', 'Maja', 'Majić', 1, 100),
@@ -70,7 +71,7 @@ INSERT INTO Nurses(Oib, Name, Surname, RoomId, OperationRoomId) VALUES
 ('8888888888', 'Zrinka', 'Zrinić', 3, 103),
 ('9999999999', 'Petra', 'Petrić', 4, NULL)
 
-SELECT * FROM Operations ORDER BY OperationTime
+SELECT * FROM Operations WHERE CAST(OperationTime AS DATE) = '2021-3-3' ORDER BY OperationTime
 
 SELECT * FROM Surgeons WHERE Address NOT LIKE '%Split'
 
